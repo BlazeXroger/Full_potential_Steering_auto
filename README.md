@@ -30,4 +30,6 @@
   - `rotinplace_callback()`: It receives msg through `msg.data` which is a single integer that tells whether the wheel should rotate in place or move forward.
   - `autonomous_motion_callback()`: It firstly checks whether the motion is in autonomous mode. If true, it sets the desired linear and angular velocities and crab mode.
   - `joyCallback()`: It checks whether the motion is in manual mode. If true, it processes the joystick input to update the drive, steering and control mode states. Finally, it processes switching between autonomous and manual mode irrespective of previous mode.
+  - `spin()`: It is the main publisher loop that runs at 10Hz. It keeps running till the ROS node is shutdown. It gives a pause while running to publish the pwm values to `motor_pwm`.
+  - `main()`: It is the main loop that calls for steering, driving and autonomous control functions.
   - 
